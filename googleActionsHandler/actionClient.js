@@ -14,7 +14,13 @@ const app = dialogflow({
 
   app.intent('Default Welcome Intent', (conv) => {
     console.log('Request came for account link flow start');	
-	conv.ask(new SignIn());
+    if(!conv.user.accessToken){
+        conv.ask(new SignIn());
+    }
+    else{
+        conv.ask('You are already sign in ');
+    }
+	
 });
 
 app.intent('Get SignIn Info', (conv, params, signin) => {
@@ -26,7 +32,7 @@ app.intent('Get SignIn Info', (conv, params, signin) => {
        } else {
          conv.ask(`I won't be able to save your data, but what do you want to do next?`)
        }
-     })
+     });
 
 app.intent('Get Opportunity Info', (conv, {oppName,fieldNames} ) => {
 	
