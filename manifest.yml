@@ -1,0 +1,5 @@
+applications:
+- name: salesforce-test-app
+memory: 128M
+command: node app.js
+buildpack: https://github.com/cloudfoundry/nodejs-buildpack
