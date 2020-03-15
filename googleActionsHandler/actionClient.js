@@ -28,6 +28,7 @@ app.intent('Get SignIn Info', (conv, params, signin) => {
     console.log('Sign in content-->',signin);
        if (signin.status === 'OK') {
          const access = conv.user.access.token // possibly do something with access token
+	 console.log('access tokem --> '+access);
          conv.ask('Great, thanks for signing in! What do you want to do next?')
        } else {
          conv.ask(`I won't be able to save your data, but what do you want to do next?`)
