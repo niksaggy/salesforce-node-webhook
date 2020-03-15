@@ -7,6 +7,7 @@ const {
   Suggestions,
   Button
 } = require('actions-on-google');
+const jsforce = require('jsforce');
 const app = dialogflow({
     debug: true
   });
