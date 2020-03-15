@@ -40,8 +40,6 @@ expApp.get('/getAccessToken', function(req,resp) {
 		console.log('authorization bearer: '+options);
 		//resp.redirect(`https://oauth-redirect.googleusercontent.com/r/YOUR_PROJECT_ID?code=${req.query.code}&state=true`);
 		});
-	});
-	
 });
 
 
